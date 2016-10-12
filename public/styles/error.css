@@ -1,0 +1,132 @@
+html {
+  margin: 0;
+  height: 100%;
+}
+
+body {
+  background: #ededed;
+  margin: 0;
+  height: 100%;
+  font: 12px/1.8em 'Microsoft Yahei', 'Arial', 'Simhei', 'SimSun', 'sans-serif';
+  color: #333333;
+  min-width: 1280px;
+  min-height: 800px;
+}
+
+.clearfix:before, .clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  overflow: hidden;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+.clearfix {
+  zoom: 1;
+}
+
+.big-text {
+  font-size: 14px;
+}
+
+.header {
+  margin-bottom: 13px;
+}
+
+.header .page-related {
+  width: 112px;
+  height: 20px;
+  line-height: 20px;
+  color: #fff;
+  background-color: #3e495d;
+  text-align: center;
+  float: left;
+}
+
+.header .arrow {
+  width: 0;
+  height: 0;
+  border-width: 10px 8px;
+  border-style: solid;
+  border-color: #3e495d transparent transparent #3e495d;
+  float: left;
+}
+
+.content {
+  width: 1000px;
+  margin: 0 auto;
+  padding-bottom: 20px;
+}
+
+.content .logo_nav {
+  height: 65px;
+  line-height: 65px;
+  padding: 0 17px 0 7px;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.logo_nav .logo {
+  display: inline-block;
+  width: 257px;
+  height: 65px;
+  vertical-align: middle;
+  background: url('images/pac_logo.png');
+  background-repeat: no-repeat;
+}
+
+.logo_nav .close-btn {
+  vertical-align: middle;
+  float: right;
+}
+
+.content .detail {
+  min-height: 580px;
+  background-color: #fefefe;
+  box-shadow: 3px 3px 3px #dfdfdf;
+  text-align: center;
+}
+
+.content .detail .error-icon-one {
+  display: inline-block;
+  width: 319px;
+  height: 115px;
+  margin: 118px 0px 55px;
+  background: url('images/404.png');
+}
+
+.content .detail .error-text {
+  font-size: 24px;
+}
+
+.content .detail .epcm-error-text {
+  padding-top: 250px;
+  font-size: 24px;
+}
+
+.content .detail .option-text {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #909090;
+}
+
+.content .detail .option-text a {
+  margin: 0 5px;
+}
+
+/*500*/
+.content .detail .error-icon-two {
+  display: inline-block;
+  width: 306px;
+  height: 117px;
+  margin: 118px 0px 55px;
+  background: url('images/500.png');
+}
+
+.text-link {
+  color: #003c78;
+  text-decoration: underline;
+}

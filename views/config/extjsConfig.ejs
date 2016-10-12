@@ -1,0 +1,231 @@
+<script type="text/javascript">
+  Ext.define('APP.extjsConfig', {
+    statics: {
+      pageCode: '<%= viewBag.pageCode %>',
+      appFolder: '/scripts/app',
+      uxFolder: '/scripts/extjs/ux',
+      pages: {
+        'login': {
+          controller: 'account.Login',
+          viewport: 'account.login.Viewport'
+        },
+        'master': {
+          controller: 'master.Frame',
+          viewport: 'master.Viewport'
+        },
+        'consult-detail':{
+           controller: 'business.ConsultDetail',
+           viewport: 'business.consultDetail.Viewport'
+        },
+        'home': {
+          controller: 'master.Home',
+          viewport: 'master.Home'
+        },
+        '101': {
+          controller: 'part.Brand',
+          viewport: 'part.brand.Viewport'
+        },
+        '102': {
+          controller: 'part.Series',
+          viewport: 'part.series.Viewport'
+        },
+        '103': {
+          controller: 'part.Model',
+          viewport: 'part.model.Viewport'
+        },
+        '104': {
+          controller: 'part.ReorganizeModel',
+          viewport: 'part.reorganizeModel.Viewport'
+        },
+        '107': {
+          controller: 'part.Legend',
+          viewport: 'part.legend.Viewport'
+        },
+        '108': {
+          controller: 'part.PartStatus',
+          viewport: 'part.partStatus.Viewport'
+        },
+        '109': {
+          controller: 'part.PartPhoto',
+          viewport: 'part.partPhoto.Viewport'
+        },
+        '110': {
+          controller: 'part.Supplier',
+          viewport: 'part.supplier.Viewport'
+        },
+        '111': {
+          controller: 'part.PartSupplier',
+          viewport: 'part.partSupplier.Viewport'
+        },
+        '113': {
+          controller: 'part.Usage',
+          viewport: 'part.usage.Viewport'
+        },
+        '114': {
+          controller: 'part.SupersessionInfo',
+          viewport: 'part.supersessionInfo.Viewport'
+        },
+        '115': {
+          controller: 'part.SupersessionDetail',
+          viewport: 'part.supersessionDetail.Viewport'
+        },
+        '116': {
+          controller: 'part.Repair',
+          viewport: 'part.repair.Viewport'
+        },
+        '117': {
+          controller: 'part.RepairDetail',
+          viewport: 'part.repairDetail.Viewport'
+        },
+        '118': {
+          controller: 'part.KeyPart',
+          viewport: 'part.keyPart.Viewport'
+        },
+        '201': {
+          controller: 'business.Notice',
+          viewport: 'business.notice.Viewport'
+        },
+        '202': {
+          controller: 'business.Survey',
+          viewport: 'business.survey.Viewport'
+        },
+        '203': {
+          controller: 'business.Consult',
+          viewport: 'business.consult.Viewport'
+        },
+        '301': {
+          controller: 'atlas.Print',
+          viewport: 'atlas.print.Viewport'
+        },
+        '302': {
+          controller: 'atlas.Publish',
+          viewport: 'atlas.publish.Viewport'
+        },
+        '303': {
+          controller: 'part.Reorganize',
+          viewport: 'part.reorganize.Viewport'
+        },
+        '304': {
+          controller: 'atlas.EpcData',
+          viewport: 'atlas.epcData.Viewport'
+        },
+        '401': {
+          controller: 'statistics.PartChange',
+          viewport: 'statistics.partChange.Viewport'
+        },
+        '402': {
+          controller: 'statistics.ReorganizeCode',
+          viewport: 'statistics.reorganizeCode.Viewport'
+        },
+        '403': {
+          controller: 'statistics.SeriesPart',
+          viewport: 'statistics.seriesPart.Viewport'
+        },
+        '404': {
+          controller: 'statistics.ModelPart',
+          viewport: 'statistics.modelPart.Viewport'
+        },
+        '405': {
+          controller: 'statistics.PartSeries',
+          viewport: 'statistics.partSeries.Viewport'
+        },
+        '406': {
+          controller: 'statistics.PartReplace',
+          viewport: 'statistics.partReplace.Viewport'
+        },
+        '407': {
+          controller: 'statistics.PartPhoto',
+          viewport: 'statistics.partPhoto.Viewport'
+        },
+        '408': {
+          controller: 'statistics.Visit',
+          viewport: 'statistics.visit.Viewport'
+        },
+        '409': {
+          controller: 'statistics.ConsultReason',
+          viewport: 'statistics.consultReason.Viewport'
+        },
+        '410': {
+          controller: 'statistics.ConsultCatagory',
+          viewport: 'statistics.consultCatagory.Viewport'
+        },
+        '411': {
+          controller: 'statistics.ConsultArea',
+          viewport: 'statistics.consultArea.Viewport'
+        },
+        '412': {
+          controller: 'statistics.ConsultSeries',
+          viewport: 'statistics.consultSeries.Viewport'
+        },
+        '413': {
+          controller: 'statistics.ConsultCompany',
+          viewport: 'statistics.consultCompany.Viewport'
+        },
+        '414': {
+          controller: 'statistics.Legend',
+          viewport: 'statistics.legend.Viewport'
+        },
+        '501': {
+          controller: 'language.Interface',
+          viewport: 'language.interface.Viewport'
+        },
+        '502': {
+          controller: 'language.Data',
+          viewport: 'language.data.Viewport'
+        },
+        '601': {
+          controller: 'part.Group',
+          viewport: 'part.group.Viewport'
+        },
+        '602': {
+          controller: 'part.SubGroup',
+          viewport: 'part.subGroup.Viewport'
+        },
+        '603': {
+          controller: 'dictionary.PartType',
+          viewport: 'dictionary.partType.Viewport'
+        },
+        '604': {
+          controller: 'dictionary.PartStatus',
+          viewport: 'dictionary.partStatus.Viewport'
+        },
+        '605': {
+          controller: 'dictionary.Supersession',
+          viewport: 'dictionary.supersession.Viewport'
+        },
+        '606': {
+          controller: 'dictionary.Problem',
+          viewport: 'dictionary.problem.Viewport'
+        },
+        '607': {
+          controller: 'dictionary.Notice',
+          viewport: 'dictionary.notice.Viewport'
+        },
+        '704': {
+          controller: 'system.EnterpriseInfo',
+          viewport: 'system.enterpriseInfo.Viewport'
+        },
+        '705': {
+          controller: 'system.UserInfo',
+          viewport: 'system.userInfo.Viewport'
+        },
+        '702': {
+          controller: 'system.FuncAuthority',
+          viewport: 'system.funcAuthority.Viewport'
+        },
+        '703': {
+          controller: 'system.DataAuthority',
+          viewport: 'system.dataAuthority.Viewport'
+        },
+        '701': {
+          controller: 'system.Role',
+          viewport: 'system.role.Viewport'
+        },
+        '706': {
+          controller: 'system.AreaInfo',
+          viewport: 'system.areaInfo.Viewport'
+        }
+      }
+    }
+  });
+</script>

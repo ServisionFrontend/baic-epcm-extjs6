@@ -1,0 +1,46 @@
+﻿Ext.define('APP.view.statistics.partSeries.Grid', {
+  extend: 'APP.view.common.grid.Grid',
+  alias: 'widget.statisticspartseriesgrid',
+  store: 'APP.store.statistics.PartSeries',
+  rownumberer: true,
+  controlButtons: [],
+  tbar: [{
+    xtype: 'button',
+    text: '导出查询结果',
+    iconCls: 'icon-export-excel',
+    action: 'export',
+    exportUrl: '/data/multiPathExport',
+    exportPath: 'report/part-series/download',
+    hidden: !APP.permissionConfig.hasOperation('epcm:report:part-series:download')
+  }],
+  columns: [{
+    text: '配件编码',
+    dataIndex: 'partCode',
+    width: 180
+  }, {
+    text: '配件名称',
+    dataIndex: 'partName',
+    width: 180
+  }, {
+    text: '配件状态',
+    dataIndex: 'partStatusName',
+    width: 180
+  }, {
+    text: '配件类型编码',
+    dataIndex: 'partTypeCode',
+    width: 180
+  }, {
+    text: '主组',
+    dataIndex: 'groupName',
+    width: 200
+  }, {
+    text: '分组',
+    dataIndex: 'subGroupName',
+    width: 200
+  }, {
+    text: '适用车系编码',
+    dataIndex: 'applySeriesCodesStr',
+    sortable: false,
+    width: 220
+  }]
+});

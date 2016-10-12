@@ -1,0 +1,42 @@
+Ext.define('APP.model.atlas.Print', {
+  extend: 'Ext.data.Model',
+  fields: [{
+    name: 'brandCode'
+  }, {
+    name: 'brandName'
+  }, {
+    name: 'seriesName'
+  }, {
+    name: 'seriesCode'
+  }, {
+    name: 'modelGroupName'
+  }, {
+    name: 'modelGroupCode'
+  }, {
+    name: 'modelName'
+  }, {
+    name: 'modelCode'
+  }, {
+    name: 'groupName'
+  }, {
+    name: 'groupCode'
+  }, {
+    name: 'subGroupName'
+  }, {
+    name: 'subGroupCode'
+  }, {
+    name: 'imageName'
+  }, {
+    name: 'imageCode'
+  }, {
+    name: 'partCode'
+  }, {
+    name: 'partName'
+  }, {
+    name: 'partNote'
+  }, {
+    name: 'callout'
+  }, {
+    name: 'qty'
+  }]
+});

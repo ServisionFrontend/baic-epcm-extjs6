@@ -1,0 +1,18 @@
+<script type="text/javascript">
+  Ext.define('APP.globalConfig', {
+    statics: {
+      path: '',
+      restpath: '',
+      ftppath: '',
+      namespace: 'APP'
+    }
+  });
+
+  // 检测当前浏览器是否支持SVG
+  hasSVG = function() {
+	var SVG_NS = 'http://www.w3.org/2000/svg';
+
+	return !!document.createElementNS &&
+		!!document.createElementNS(SVG_NS, 'svg').createSVGRect;
+  }
+</script>

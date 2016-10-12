@@ -1,0 +1,55 @@
+<script type="text/javascript">
+  Ext.define("APP.permissionConfig", {
+    statics: {
+      result: (function () {
+        var data = <%- viewBag.authCodeList %>;
+
+        var permissionObj = {};
+
+        for (var i = 0; i < data.length; i++) {
+          permissionObj[data[i]] = true;
+        }
+
+        return permissionObj;
+      })(),
+
+      hasOperation: function (name) {
+        var me = this;
+
+        if (!name) {
+          return;
+        }
+
+        if (me.result[name]) {
+          return true;
+        }
+
+        var arr = name.split(':');
+
+        if (arr.length === 1) {
+          return me.result[name] ? true : false;
+        }
+
+        var len = arr.length;
+        var nameList = [];
+
+        for (var i = len - 1; i > 0; i--) {
+          var nameStr = '';
+          for (var j = 0; j < i; j++) {
+            nameStr += arr[j] + ':';
+          }
+          nameList.push(nameStr);
+        }
+
+        for (var n = 0; n < nameList.length; n++) {
+          var curName = nameList[n] + '*';
+          if (me.result[curName]) {
+            return true;
+          }
+        }
+
+        return me.result['admin'] ? true : false;
+      }
+    }
+  });
+</script>

@@ -1,0 +1,42 @@
+﻿Ext.define('APP.view.atlas.print.Grid', {
+  extend: 'APP.view.common.grid.Grid',
+  alias: 'widget.printgrid',
+  store: 'APP.store.atlas.Print',
+  rownumberer: true,
+  controlButtons: [],
+  tbar: [{
+    xtype: 'button',
+    text: '下载查询配件图册',
+    iconCls: 'icon-arrow-down',
+    action: 'download'
+  }],
+  columns: [{
+    text: '品牌',
+    dataIndex: 'brandName',
+    flex: 1
+  }, {
+    text: '车系',
+    dataIndex: 'seriesName',
+    flex: 1
+  }, {
+    text: '车型',
+    dataIndex: 'modelName',
+    flex: 1
+  }, {
+    text: '主组',
+    dataIndex: 'groupName',
+    flex: 1
+  }, {
+    text: '分组',
+    dataIndex: 'subGroupName',
+    flex: 1
+  }, {
+    text: '图例编码',
+    dataIndex: 'imageCode',
+    flex: 1
+  }, {
+    text: '图例名称',
+    dataIndex: 'imageName',
+    flex: 1
+  }]
+});

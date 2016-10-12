@@ -1,0 +1,37 @@
+<%
+  viewBag.pageCode = 'consult-detail';
+  viewBag.pageTitle = '问题详情';
+%>
+
+<% include ../../common/header.ejs %>
+<!--begin body-->
+
+<!-- reply content template  -->
+<script id="reply-tpl" type="text/template">
+	<div class="reply-wrap">
+		<ul>
+		   <tpl for=".">
+				<li>
+					<div class="info">
+						<div class="info-desc">{content}</div>
+						<div class="files">
+						    <tpl for="attachments">
+								<a target="_blank" href="{path}" >{name}</a>
+							</tpl>
+						</div>
+					</div>
+					<div class="user">{createdBy}</div>
+					<div class="time">{createdOn}</div>
+					<tpl if="statusCode != 2">
+						<div class="operation">
+							<a data-action="delete" data-code="{answerCode}" href="javascript:void(0);">删除回复</a>
+						</div>
+					</tpl>
+				</li>
+		   </tpl>
+		</ul>
+	</div>
+</script>
+
+<!--end body-->
+<% include ../../common/footer.ejs %>

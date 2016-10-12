@@ -1,0 +1,89 @@
+﻿Ext.define('APP.view.system.enterpriseInfo.Grid', {
+  extend: 'APP.view.common.grid.Grid',
+  alias: 'widget.enterpriseinfogrid',
+  store: 'APP.store.system.EnterpriseInfo',
+  rownumberer: true,
+  controlButtons: ['update'],
+  tbar: [{
+    xtype: 'button',
+    text: '新增',
+    action: 'create',
+    iconCls: 'icon-min-add',
+    hidden: !APP.permissionConfig.hasOperation('epcm:enterprise:add')
+  }, '-', {
+    xtype: 'button',
+    text: '修改',
+    singleSelectEnable: true,
+    action: 'update',
+    disabled: true,
+    iconCls: 'icon-min-edit',
+    hidden: !APP.permissionConfig.hasOperation('epcm:enterprise:update')
+  }, '-', {
+    xtype: 'button',
+    text: '删除',
+    iconCls: 'icon-delete',
+    action: 'destroy',
+    disabled: true,
+    deleteText: '请确认删除该企业信息？',
+    hidden: !APP.permissionConfig.hasOperation('epcm:enterprise:delete')
+  },
+    //'-',
+    {
+    xtype: 'button',
+    text: '新增用户',
+    iconCls: 'icon-user-add',
+    action: 'add-user',
+    disabled: true,
+    hidden: true
+  }],
+  columns: [{
+    text: '企业类型',
+    dataIndex: 'typeName',
+    width: 140,
+    sortable: false
+  }, {
+    text: '品牌',
+    dataIndex: 'brandName',
+    width: 140
+  }, {
+    text: '企业编码',
+    dataIndex: 'code',
+    width: 120
+  }, {
+    text: '企业名称',
+    dataIndex: 'name',
+    width: 200
+  }, {
+    text: '企业地址',
+    dataIndex: 'address',
+    width: 240
+  }, {
+    text: '联系人姓名',
+    dataIndex: 'contactName',
+    width: 120
+  }, {
+    text: '联系人电话',
+    dataIndex: 'contactPhone',
+    width: 140
+  }, {
+    text: '联系人EMAIL',
+    dataIndex: 'contactMail',
+    width: 140
+  }, {
+    text: '创建人',
+    dataIndex: 'createdBy',
+    width: 120
+  }, {
+    text: '创建时间',
+    dataIndex: 'createdOn',
+    width: 160
+  }, {
+    text: '修改人',
+    dataIndex: 'modifiedBy',
+    width: 120
+  }, {
+    text: '修改时间',
+    dataIndex: 'modifiedOn',
+    width: 160
+  }]
+});

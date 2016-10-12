@@ -1,0 +1,36 @@
+Ext.define('APP.model.statistics.ConsultCatagory', {
+  extend: 'Ext.data.Model',
+  fields: [{
+    name: 'questionTypeCode'
+  }, {
+    name: 'questionTypeName'
+  }, {
+    name: 'brandCode'
+  }, {
+    name: 'brandName'
+  }, {
+    name: 'advisoryAmount'
+  }, {
+    name: 'reply8hourAmount'
+  }, {
+    name: 'unReplyAmount'
+  }, {
+    name: 'unReplyClosedAmount'
+  }, {
+    name: 'replyAmount'
+  }, {
+    name: 'closedAmount'
+  }, {
+    name: 'closedByOwnAmount'
+  }, {
+    name: 'closeByOwnRate'
+  }, {
+    name: 'closeRate'
+  }, {
+    name: 'reply8hourRate'
+  }, {
+    name: 'satisfiedAmount'
+  }, {
+    name: 'satisfiedRate'
+  }]
+});

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="x-ua-compatible" content="IE=edge,chrome=1">
+  <title><%= viewBag.pageTitle %></title>
+</head>
+<body>
+
+<style>
+    .progress-box{
+      text-align: center;
+      width: 320px;
+      border: 1px solid #999;
+      padding: 1px;
+      height: 8px;
+      position: absolute;
+      left:50%;
+      top:50%;
+      margin-left: -161px;
+      margin-top:-6px;
+    }
+    .progress-box .progress-bar{
+      width: 0;
+      height: 100%;
+      background-color: #6188f5;
+      background-repeat: repeat-x;
+      background-position: 0 0;
+      background-size: 16px 8px;
+      background-image: linear-gradient(315deg,transparent,transparent 33%,rgba(0,0,0,.12) 33%,rgba(0,0,0,.12) 66%,transparent 66%,transparent);
+    }
+    .progress-box .progress-text{
+      position: absolute;
+      top:12px;
+      left: 50%;
+      width:150px;
+      margin-left:-75px;
+      line-height: 16px;
+      font-size: 12px;
+      text-align: center;
+      color:#666;
+    }
+</style>
+
+<script type="text/javascript">
+  if (!Array.prototype.indexOf) {
+    Array.prototype.indexOf = function(elt) {
+      var len = this.length >>> 0;
+
+      var from = Number(arguments[1]) || 0;
+      from = (from < 0)
+           ? Math.ceil(from)
+           : Math.floor(from);
+      if (from < 0)
+        from += len;
+
+      for (; from < len; from++)
+      {
+        if (from in this &&
+            this[from] === elt)
+          return from;
+      }
+      return -1;
+    };
+  }
+</script>
+
+<div id="progress-box" class="progress-box">
+    <div id="progress-bar" class="progress-bar"></div>
+    <div id="progress-text" class="progress-text"></div>
+</div>
+
+<script type="text/javascript">
+  var curStep = 0;
+  var totalCount = 6;
+  var curPercent = 0;
+  var progressBox = document.getElementById('progress-box');
+  var progressBar = document.getElementById('progress-bar');
+  var progressText = document.getElementById('progress-text');
+  var loadedList = []
+
+  function loadProgress(name) {
+    if (name){
+      if (loadedList.indexOf(name) > -1){
+        if (curStep === totalCount){
+          progressBox.style.display = 'none';
+        }
+        return;
+      } else {
+        loadedList.push(name);
+      }
+    }
+    curStep++;
+    if (curStep <= totalCount) {
+      curPercent = parseInt((100 / totalCount) * curStep);
+      progressBar.style.width = curPercent + '%';
+      progressText.innerHTML = 'loading '+ curPercent + '%';
+    } else {
+      progressBox.style.display = 'none';
+    }
+  }
+</script>
+
+<link rel="stylesheet" type="text/css" media="all" onload="loadProgress()" href="/resources/ext-theme-gray/ext-theme-gray-all.css"/>
+<link rel="stylesheet" type="text/css" media="all" onload="loadProgress()" href="/styles/all.css"/>
+<link rel="stylesheet" type="text/css" media="all" onload="loadProgress()" href="/styles/icon.css"/>
+
+<script type="text/javascript" onreadystatechange='if(this.readyState === "complete"){loadProgress("bootstartp.js");}' onload ='loadProgress("bootstartp.js")' src="/scripts/extjs/bootstrap.js"></script>
+<script type="text/javascript" onreadystatechange='if(this.readyState === "complete"){loadProgress("ext-lang-zh.js");}' onload='loadProgress("ext-lang-zh.js")' src="/scripts/extjs/ext-lang-zh_CN.js"></script>
+
+<% include ../config/permissionConfig.ejs %>
+<% include ../config/globalConfig.ejs %>
+<% include ../config/extjsConfig.ejs %>
+
+<script type="text/javascript" onreadystatechange='if(this.readyState === "complete"){loadProgress("app");}' onload='loadProgress("app.js")' src="/scripts/app/app.js"></script>

@@ -1,0 +1,26 @@
+<%
+  viewBag.pageCode = 'master';
+  viewBag.pageTitle = '电子配件目录EPC系统管理中心';
+%>
+
+<% include ../common/header.ejs %>
+<!--begin body-->
+
+  <!-- header tpl -->
+  <script id="header-tpl" type="text/template">
+    <h1 class="header-logo">
+      <img src="<%= viewBag.logoImgUrl %>" />
+    </h1>
+    <div class="header-intro">电子配件目录EPC系统管理中心</div>
+    <ul class="header-func-box">
+        <li style="background: none;"><label> <%= viewBag.username %> </label><span>，您好！</span></li>
+        <li><a href="<%= viewBag.epcIndexUrl %>" target="_blank" >首页</a></li>
+        <li class="header-help-box">
+          <a href="<%= viewBag.helpDocUrl %>" target="_blank" class="header-help">管理手册</a>
+        </li>
+        <li><a data-action="logout">退出</a></li>
+    </ul>
+  </script>
+
+<!--end body-->
+<% include ../common/footer.ejs %>

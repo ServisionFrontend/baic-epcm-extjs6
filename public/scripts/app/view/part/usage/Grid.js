@@ -1,0 +1,134 @@
+﻿Ext.define('APP.view.part.usage.Grid', {
+  extend: 'APP.view.common.grid.Grid',
+  alias: 'widget.usagegrid',
+  store: 'APP.store.part.Usage',
+  rownumberer: true,
+  controlButtons: ['update', 'destroy'],
+  tbar: [{
+    xtype: 'button',
+    text: '新增',
+    action: 'create',
+    iconCls: 'icon-min-add',
+    hidden: !APP.permissionConfig.hasOperation('epcm:usage:add')
+  }, '-', {
+    xtype: 'button',
+    text: '修改',
+    singleSelectEnable: true,
+    action: 'update',
+    disabled: true,
+    iconCls: 'icon-min-edit',
+    hidden: !APP.permissionConfig.hasOperation('epcm:usage:update')
+  }, '-', {
+    xtype: 'button',
+    text: '删除',
+    iconCls: 'icon-delete',
+    action: 'destroy',
+    disabled: true,
+    deleteText: '请确认删除该整车编码？',
+    hidden: !APP.permissionConfig.hasOperation('epcm:usage:delete')
+  }, '-', {
+    xtype: 'button',
+    text: '导入',
+    iconCls: 'icon-import-excel',
+    action: 'create-import',
+    postUrl: '/data/import/usage',
+    tplUrl: '/template/download/usage',
+    pageName: '整编用法',
+    introText: '说明：\n\n' +
+    '请以整编级单位进行用法数据导入，不支持导入某个整编的部分用法数据。\n\n',
+    hidden: !APP.permissionConfig.hasOperation('epcm:usage:import')
+  }, '-', {
+    xtype: 'button',
+    text: '导出查询结果',
+    iconCls: 'icon-export-excel',
+    action: 'export',
+    exportUrl:'/data/export/usage',
+    exportNeedField: 'vehicleCode',
+    hidden: !APP.permissionConfig.hasOperation('epcm:usage:export')
+  }],
+  columns: [{
+    text: '整车编码',
+    dataIndex: 'vehicleCode',
+    width: 180
+  }, {
+    text: '车系名称',
+    dataIndex: 'seriesName',
+    width: 140
+  }, {
+    text: '车型组编码',
+    dataIndex: 'modelGroupCode',
+    width: 120
+  }, {
+    text: '车型组名称',
+    dataIndex: 'modelGroupName',
+    width: 140
+  }, {
+    text: '整编车型',
+    dataIndex: 'modelName',
+    width: 180
+  }, {
+    text: '主组名称',
+    dataIndex: 'groupName',
+    width: 140
+  }, {
+    text: '分组名称',
+    dataIndex: 'subGroupName',
+    width: 200
+  }, {
+    text: '图例编码',
+    dataIndex: 'imageCode',
+    width: 300
+  }, {
+    text: '图例名称',
+    dataIndex: 'imageName',
+    width: 200
+  }, {
+    text: '标号',
+    dataIndex: 'callout',
+    width: 80
+  }, {
+    text: '配件编码',
+    dataIndex: 'partCode',
+    width: 120
+  }, {
+    text: '配件用法名称',
+    dataIndex: 'partUsageName',
+    width: 140
+  }, {
+    text: '用量',
+    dataIndex: 'qty',
+    width: 80
+  }, {
+    text: '开始时间',
+    dataIndex: 'startDate',
+    width: 140
+  }, {
+    text: '结束时间',
+    dataIndex: 'endDate',
+    width: 140
+  }, {
+    text: '用法备注',
+    dataIndex: 'note',
+    width: 180
+  }, {
+    text: '工程师备注',
+    dataIndex: 'engineerNote',
+    width: 180
+  }, {
+    text: '创建人',
+    dataIndex: 'createdBy',
+    width: 140
+  }, {
+    text: '创建时间',
+    dataIndex: 'createdOn',
+    width: 120
+  }, {
+    text: '修改人',
+    dataIndex: 'modifiedBy',
+    width: 120
+  }, {
+    text: '修改时间',
+    dataIndex: 'modifiedOn',
+    width: 160
+  }]
+});
